@@ -1,6 +1,6 @@
 .example-component {
 	@include clearfix;
-	background: dodgerblue;
+	background: #eee;
 	padding: 1rem;
 
 	h1 {
@@ -27,7 +27,7 @@
 		    font-size: 20px;
 		    line-height: 1;
 		    opacity: .75;
-		    color: white;
+		    color: black;
 		    -webkit-font-smoothing: antialiased;
 		}
 	}
