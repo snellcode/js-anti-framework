@@ -1,0 +1,54 @@
+.example-component {
+	@include clearfix;
+	background: dodgerblue;
+	padding: 1rem;
+
+	h1 {
+		text-align: center;
+	}
+
+	.slick-arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 0;
+		line-height: 0;
+		width: 20px;
+		height: 20px;
+		margin-top: -10px;
+		padding: 0;
+		cursor: pointer;
+		color: transparent;
+		border: none;
+		outline: none;
+		background: transparent;
+
+		&:before {
+		    font-size: 20px;
+		    line-height: 1;
+		    opacity: .75;
+		    color: white;
+		    -webkit-font-smoothing: antialiased;
+		}
+	}
+
+	.slick-prev {
+		left: 0;
+		&:before {
+			content: '<';
+		}
+	}
+
+	.slick-next {
+		right: 0;
+		&:before {
+			content: '>';
+		}
+	}
+
+	ul {
+		li {
+			padding: 0 5rem;
+		}
+	}
+}
