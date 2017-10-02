@@ -1,6 +1,6 @@
 # js-anti-framework
 
-requires node and gulp. If you don't have them, here's a good way to get them (Linux)
+Requires node and gulp. If you don't have them, here's a good way to get them (Linux)
 
 Node: http://yoember.com/nodejs/the-best-way-to-install-node-js/
 
