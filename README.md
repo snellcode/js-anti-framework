@@ -1,15 +1,3 @@
-# js-anti-framework
-
-Requires node and gulp. If you don't have them, here's a good way to get them (Linux)
-
-Node: http://yoember.com/nodejs/the-best-way-to-install-node-js/
-
-Gulp: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
-
-When you have node and gulp, install the project using `npm install`. After that, use `gulp build` to build dist files. If you are working on the files, use just `gulp`, and this will watch for file changes and will run build when you save changes.
-
-You will also need to serve the files to the browser. An easy way to do this is running `php -S localhost:8000` inside the project folder (in a different terminal than `gulp`). Then you can direct your browser to http://localhost:8000/ to see the demo.
-
 # The JavaScript Anti-Framework (or The Cathedral and The Pyramid): 
 
 With so many JavaScript frameworks available, which one do you choose? Angular 2 and React are by far the most popular, but both of these frameworks come with a lot of things you may not need. These frameworks usually assume you're building a SPA (Single Page App), and if you are, they both do a great job. However, using these frameworks will also mean a substatial amount of code your users will need to download. On mobile, this can be a concern for performance, especially with Angular 2 which is quite large. There are techniques to trim down the build size, but then again, what if you could avoid all that code in the first place?
@@ -27,3 +15,17 @@ In this basic 'anti-framework', we have to do everything ourself. There is no au
 Clearly there are a lot of improvments we could make, as this example is very basic. In a real world usage, we would have several templates, one for each portion of the view. We would have a larger tree of state data, and our update logic would become more complex. We can manage this complexity by using Flux/Redux style reducers to enforce transactional state changes in a centralized way. At a certain point, we may consider using a real framework if it does become too complex. But then again, if we target our components specifically and narrowly for their purpose, we can end up with a bunch of simple componenets that work together to make the whole.
 
 At the end of the day, the framework you choose (or in this case, don't choose) doesn't make as much difference as how you use it. You can make something with pieces that fit together elegantly, like a cathedral. Or you can make a big mess of code that is only patchable by lumping more on top, like a pyramid. We can learn from emerging best practices like one way dataflow and transactional state management. We can use code that other very smart people wrote, and accept the unavoidable additional file size baggage. Or, if we find a simpler approach gives us what we need, we can adopt "The JavaScript Anti-Framework", and go our own way.
+
+***
+
+# Technical Notes
+
+Requires node and gulp. If you don't have them, here's a good way to get them (Linux)
+
+Node: http://yoember.com/nodejs/the-best-way-to-install-node-js/
+
+Gulp: https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md
+
+When you have node and gulp, install the project using `npm install`. After that, use `gulp build` to build dist files. If you are working on the files, use just `gulp`, and this will watch for file changes and will run build when you save changes.
+
+You will also need to serve the files to the browser. An easy way to do this is running `php -S localhost:8000` inside the project folder (in a different terminal than `gulp`). Then you can direct your browser to http://localhost:8000/ to see the demo.
