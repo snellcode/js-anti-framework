@@ -1,10 +1,29 @@
+$arrowSize: 20px;
+
 .users-carousel {
 	@include clearfix;
 	background: #eee;
-	padding: 1rem;
+	padding: 2rem;
+	border: 2px solid dodgerblue;
 
 	h1 {
 		text-align: center;
+	}
+
+	button {
+		border: 0;
+		margin: 0 .5rem;
+		font-size: 1.4rem;
+		cursor: pointer;
+
+		&.active {
+			background: hotpink;
+		}
+	}
+
+	.bottom-bar {
+		text-align: center;
+		margin-top: 2rem;
 	}
 
 	.filter-groups {
@@ -12,21 +31,28 @@
 		margin-bottom: 1rem;
 		li {
 			display: inline-block;
-			button {
-				border: 0;
-				margin: 0 .5rem;
-				font-size: 1.4rem;
-				cursor: pointer;
 
-				&.active {
-					background: hotpink;
-				}
-			}
 		}
 	}
 
+	.users {
+		padding: 0 2.5rem;
+		max-width: 640px;
+		margin: auto;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.slick-list {
+		z-index: 1;
+		border: 2px solid dodgerblue;
+	}
+
 	.slick-slide {
-		padding: 0 5rem;
+		padding: 1rem;
+		background: #ddd;
 	}
 
 	.slick-arrow {
@@ -35,36 +61,39 @@
 		transform: translateY(-50%);
 		font-size: 0;
 		line-height: 0;
-		width: 20px;
-		height: 20px;
-		margin-top: -10px;
+		width: $arrowSize;
+		height: $arrowSize;
+		margin: 0;
 		padding: 0;
 		cursor: pointer;
 		color: transparent;
 		border: none;
 		outline: none;
 		background: transparent;
+		z-index: 2;
 
 		&:before {
-		    font-size: 20px;
-		    line-height: 1;
-		    opacity: .75;
-		    color: black;
-		    -webkit-font-smoothing: antialiased;
+			content: '';
+			width: 0; 
+			height: 0; 
 		}
 	}
 
 	.slick-prev {
-		left: 0;
+		left: 5px;
 		&:before {
-			content: '<';
+			border-top: $arrowSize solid transparent;
+			border-bottom: $arrowSize solid transparent; 
+			border-right: $arrowSize solid hotpink; 
 		}
 	}
 
 	.slick-next {
-		right: 0;
+		right: 5px;
 		&:before {
-			content: '>';
+			border-top: $arrowSize solid transparent;
+			border-bottom: $arrowSize solid transparent;
+			border-left: $arrowSize solid hotpink;
 		}
 	}
 

@@ -11,12 +11,19 @@ export default class UsersCarousel {
 		this.groups = ['A', 'B', 'C'];
 		this.activeGroup = null;
 		this.template = $('#tmpl-users-carousel').html();
+		this.init();
+	}
+
+	init() {
+		this.$root.addClass('loading');
+		this.activeGroup = null;
 		this.getUsers()
 			.then(users => {
 				this.users = this.allUsers = users;
 				this.update();
 			})
-			.catch(console.log.bind(console));
+			.catch(console.log.bind(console))
+			.finally(() => setTimeout(() => this.$root.removeClass('loading'), 300));
 	}
 
 	getUsers() {
@@ -53,6 +60,7 @@ export default class UsersCarousel {
 		}));
 		this.$root.find('.users').not('.slick-initialized').slick();
 		this.$root.find('.filter-groups button').on('click', this.filter.bind(this));
+		this.$root.find('.init').on('click', this.init.bind(this));
 	}
 
 	filter(e) {
