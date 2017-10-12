@@ -46,7 +46,7 @@ p {
 	position: relative;
 	&:before {
 		content: '';
-		background: rgba(white, .8) url(/img/loading.svg) no-repeat center center;
+		background: rgba(white, .8) url(./img/loading.svg) no-repeat center center;
 		position: absolute;
 		top: 0;
 		right: 0;
