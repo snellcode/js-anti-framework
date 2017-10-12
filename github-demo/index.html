@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>js-anti-framework demo</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css" />
+	<link rel="stylesheet" href="/dist/css/main.css">
+</head>
+<body>
+
+	<div class="users-carousel"></div>
+	<script type="text/html" id="tmpl-users-carousel">
+		<h1>Users (${users.length})</h1>
+		<ul class="filter-groups">
+			<% _.forEach(groups, function(group) { %>
+			<li>
+				<button 
+					${activeGroup === group ? 'class="active"' : ''} 
+					data-group="${group}">Group ${group}
+				</button>
+			</li> 
+			<% }); %> 
+		</ul>
+		<ul class="users">
+			<% _.forEach(users, function(user) { %>
+			<li>
+				<h2><%= user.name %></h2>
+				<h3>Group: <%= user.group %></h3>
+				<p><%= user.company.name %>, <%= user.email %></p>
+			</li> 
+			<% }); %> 
+		</ul>
+		<div class="bottom-bar"><button class="init">re-initialize</button></div>
+	</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.0/bluebird.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js"></script>
+	<script src="/dist/js/main.js"></script>
+</body>
+</html>
